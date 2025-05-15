@@ -1,0 +1,20 @@
+def count_digits(number):
+    # Convert to positive number to handle negative inputs
+    number = abs(number)
+    # Handle zero case
+    if number == 0:
+        return 1
+    # Count digits using string conversion
+    return len(str(number))
+
+try:
+    # Get input from user
+    user_input = float(input("Enter a number: "))
+    # Convert to integer if it's a whole number
+    if user_input.is_integer():
+        user_input = int(user_input)
+    # Calculate and display result
+    digit_count = count_digits(user_input)
+    print(f"The number {user_input} has {digit_count} digits.")
+except ValueError:
+    print("Please enter a valid number.")
